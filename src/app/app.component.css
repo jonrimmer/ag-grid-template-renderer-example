@@ -1,0 +1,22 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+header button {
+  margin-left: 12px;
+}
+
+ag-grid-angular {
+  flex: 1;
+}

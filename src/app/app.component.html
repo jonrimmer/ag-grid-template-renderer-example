@@ -1,0 +1,29 @@
+<header>
+  You like these countries:
+  <span
+    *ngFor="let country of liked; let last = last"
+  >{{ country + (last ? '' : ', ') }}</span>
+  <button
+    *ngIf="liked.length != 0"
+    (click)="liked.length = 0"
+  >Clear</button>
+</header>
+
+<ag-grid-angular
+  [gridOptions]="gridOptions"
+  class="ag-theme-balham"
+></ag-grid-angular>
+
+<ng-template #greetCell let-row>
+  <button (click)="greet(row)">Greet</button>
+</ng-template>
+
+<ng-template #likeCell let-row>
+  <button
+    *ngIf="liked.length < 5; else noMoreLikes"
+    (click)="like(row)"
+  >Make {{ liked.length + 1 | ordinal }} like {{ row.country }}</button>
+  <ng-template #noMoreLikes>
+    No more likes to give!
+  </ng-template>
+</ng-template>
