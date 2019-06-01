@@ -28,8 +28,8 @@ const countries = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('likeCell') likeCell: TemplateRef<any>;
-  @ViewChild('greetCell') greetCell: TemplateRef<any>;
+  @ViewChild('likeCell', { static: true }) likeCell: TemplateRef<any>;
+  @ViewChild('greetCell', {  static: true }) greetCell: TemplateRef<any>;
 
   liked = [];
 
